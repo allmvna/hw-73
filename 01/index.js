@@ -2,8 +2,9 @@ const express = require('express');
 const app = express();
 const port = 8000;
 
-app.get('/hello', (req, res) => {
-    return res.send('Hello');
+
+app.get('/:word', (req, res) => {
+    return res.send(`${req.params.word}`);
 });
 
 app.listen(port, () => {
